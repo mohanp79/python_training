@@ -22,4 +22,4 @@ for char in ip_str:
 
 print(count)
 
-print('Git check-in working')
+print('Git check-in windows working')
