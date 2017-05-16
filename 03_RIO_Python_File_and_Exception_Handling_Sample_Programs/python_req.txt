@@ -1,0 +1,24 @@
+Hi Ram,
+
+As discussed need help with python and perl script.
+
+We have many data files in a folder.
+
+From  the attached files (example files) we need the below details.
+
+From
+1.      ScenarioPrivateConfig
+Path= only the last part (after \ i.e *.lrs)
+Scripts=
+2.       TestChief
+UiName=
+If
+RunLogicPaceType="Random"
+Then need below 2 items
+RunLogicRandomPaceMax=
+RunLogicRandomPaceMin=
+Else
+If
+RunLogicPaceType="Const"
+Then
+RunLogicPaceConstTime=

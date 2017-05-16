@@ -1,0 +1,40 @@
+>>> a = {1: [1,2,3]}
+>>> b = a.copy()
+>>> a, b
+({1: [1, 2, 3]}, {1: [1, 2, 3]})
+>>> a[1].append(4)
+>>> a, b
+({1: [1, 2, 3, 4]}, {1: [1, 2, 3, 4]})
+
+In contrast, a deep copy will copy all contents by value.
+>>> c = copy.deepcopy(a)
+>>> a, c
+({1: [1, 2, 3, 4]}, {1: [1, 2, 3, 4]})
+>>> a[1].append(5)
+>>> a, c
+({1: [1, 2, 3, 4, 5]}, {1: [1, 2, 3, 4]})
+
+So:
+1.
+a = b: Reference assignment, Make a and b points to the same object.
+a ---,
+     v
+     {1: L}
+     ^   |
+b ---'   '----> [1,2,3]
+
+2.
+a = b.copy(): Shallow copying, a and b will become two isolated objects, but their contents still share the same reference
+a ---> {1: L}
+           |             
+           >---> [1,2,3]
+           |
+b ---> {1: M}
+
+3.
+a = copy.deepcopy(b): Deep copying, a and b's structure and content become completely isolated.
+a ---> {1: L}
+           ‘-----> [1,2,3]
+b ---> {1: M}
+           ‘-----> [1,2,3]
+
